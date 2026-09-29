@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaTech - Solusi Digital Masa Depan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f3ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            cyan: '#06b6d4',
+                            accent: '#a855f7'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 4s ease-in-out infinite',
+                        'float-delayed': 'float 4s ease-in-out 2s infinite',
+                        'pulse-glow': 'pulseGlow 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4' },
+                            '50%': { opacity: '0.8' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15), rgba(6, 182, 212, 0) 60%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-accent {
+            background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white transition-colors duration-300">
+
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-brand-cyan to-brand-accent p-0.5 flex items-center justify-center shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center">
+                            <i class="fa-solid fa-cubes text-brand-cyan text-lg"></i>
+                        </div>
+                    </div>
+                    <span class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Nexa<span class="text-gradient">Tech</span></span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-sm font-medium text-brand-600 dark:text-brand-cyan transition-colors">Beranda</a>
+                    <a href="#fitur" class="text-sm font-medium text-slate-600 hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-cyan transition-colors">Fitur</a>
+                    <a href="#tentang" class="text-sm font-medium text-slate-600 hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-cyan transition-colors">Tentang Kami</a>
+                    <a href="#testimoni" class="text-sm font-medium text-slate-600 hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-cyan transition-colors">Testimoni</a>
+                    <a href="#kontak" class="text-sm font-medium text-slate-600 hover:text-brand-600 dark:text-slate-300 dark:hover:text-brand-cyan transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Action Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="p-2.5 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-white rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+                        <i id="theme-toggle-dark-icon" class="hidden fa-solid fa-moon text-lg"></i>
+                        <i id="theme-toggle-light-icon" class="hidden fa-solid fa-sun text-lg"></i>
+                    </button>
+                    
+                    <a href="#cta" class="px-5 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-brand-600 to-brand-cyan rounded-xl shadow-md hover:shadow-lg hover:shadow-brand-500/25 hover:-translate-y-0.5 transition-all duration-300">
+                        Mulai Sekarang
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <button id="theme-toggle-mobile" class="p-2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-white rounded-lg">
+                        <i id="theme-toggle-dark-icon-m" class="hidden fa-solid fa-moon"></i>
+                        <i id="theme-toggle-light-icon-m" class="hidden fa-solid fa-sun"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div class="hidden md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800" id="mobile-menu">
+            <div class="px-4 pt-3 pb-6 space-y-3">
+                <a href="#home" class="block px-3 py-2 rounded-lg text-base font-medium text-brand-600 dark:text-brand-cyan bg-brand-50 dark:bg-slate-800/50">Beranda</a>
+                <a href="#fitur" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Fitur</a>
+                <a href="#tentang" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Tentang Kami</a>
+                <a href="#testimoni" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Testimoni</a>
+                <a href="#kontak" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Kontak</a>
+                <div class="pt-2">
+                    <a href="#cta" class="block w-full text-center px-5 py-3 text-base font-medium text-white bg-gradient-to-r from-brand-600 to-brand-cyan rounded-xl shadow-md">
+                        Mulai Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+        <!-- Background Glowing Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/10 dark:bg-brand-500/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+        <div class="absolute top-1/3 right-10 w-80 h-80 bg-brand-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Hero Left Column Text -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-8">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-brand-950/60 border border-brand-200 dark:border-brand-800/60 shadow-sm">
+                        <span class="flex h-2 w-2 rounded-full bg-brand-cyan animate-ping"></span>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-brand-600 dark:text-brand-cyan">Generasi Terbaru Platform Digital</span>
+                    </div>
+
+                    <!-- Headline -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-slate-900 dark:text-white">
+                        Wujudkan Solusi Digital <br class="hidden sm:inline">
+                        <span class="text-gradient">Masa Depan</span> Bersama Kami.
+                    </h1>
+
+                    <!-- Subheadline -->
+                    <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Akselerasi pertumbuhan bisnis Anda dengan teknologi terkini. Cepat, aman, dan dirancang khusus untuk memenuhi skala kebutuhan industri modern.
+                    </p>
+
+                    <!-- Dual CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#cta" class="w-full sm:w-auto px-8 py-4 rounded-xl text-center font-semibold text-white bg-gradient-to-r from-brand-600 to-brand-cyan hover:from-brand-700 hover:to-brand-cyan shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-1 transition-all duration-300">
+                            Jelajahi Sekarang <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </a>
+                        <a href="#fitur" class="w-full sm:w-auto px-8 py-4 rounded-xl text-center font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all duration-300">
+                            Pelajari Lebih Lanjut
+                        </a>
+                    </div>
+
+                    <!-- Trust Markers -->
+                    <div class="pt-6 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-center lg:justify-start space-x-6 text-sm text-slate-500 dark:text-slate-400">
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-cyan mr-2"></i> Gratis Uji Coba 14 Hari</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-brand-cyan mr-2"></i> Tanpa Kartu Kredit</div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Column Visual Graphic -->
+                <div class="lg:col-span-5 relative">
+                    <!-- Main Showcase Card -->
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="relative rounded-2xl p-6 glass-card shadow-2xl border border-white/20 dark:border-slate-800">
+                            <!-- Code / Graphic Mockup -->
+                            <div class="bg-slate-900 rounded-xl p-5 shadow-inner text-slate-300 font-mono text-sm space-y-3">
+                                <div class="flex items-center space-x-2 pb-3 border-b border-slate-800">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                    <span class="text-xs text-slate-500 ml-2">nexatech-dashboard.config</span>
+                                </div>
+                                <div class="space-y-1 text-xs sm:text-sm">
+                                    <p><span class="text-purple-400">const</span> <span class="text-blue-400">app</span> = <span class="text-purple-400">new</span> <span class="text-yellow-300">NexaEngine</span>();</p>
+                                    <p class="text-slate-500">// Mengatur sistem performa tinggi</p>
+                                    <p><span class="text-blue-400">app</span>.<span class="text-green-400">enableSpeedBoost</span>({ <span class="text-orange-300">optimization</span>: <span class="text-cyan-400">'max'</span> });</p>
+                                    <p><span class="text-blue-400">app</span>.<span class="text-green-400">deploySecurity</span>({ <span class="text-orange-300">encryption</span>: <span class="text-cyan-400">'AES-256'</span> });</p>
+                                    <p class="text-emerald-400"><i class="fa-solid fa-check text-xs"></i> Status: System Optimal (100%)</p>
+                                </div>
+                            </div>
+
+                            <!-- Floating Card 1: Performance -->
+                            <div class="absolute -top-6 -left-6 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 flex items-center space-x-3 animate-float">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-950/60 flex items-center justify-center text-emerald-500">
+                                    <i class="fa-solid fa-bolt text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Kecepatan Reaksi</p>
+                                    <p class="text-sm font-bold text-slate-900 dark:text-white">99.8% Faster</p>
+                                </div>
+                            </div>
+
+                            <!-- Floating Card 2: Security -->
+                            <div class="absolute -bottom-6 -right-6 bg-white dark:bg-slate-900 p-4 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 flex items-center space-x-3 animate-float-delayed">
+                                <div class="w-10 h-10 rounded-lg bg-indigo-100 dark:bg-indigo-950/60 flex items-center justify-center text-brand-600">
+                                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Tingkat Keamanan</p>
+                                    <p class="text-sm font-bold text-slate-900 dark:text-white">Enterprise Grade</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="fitur" class="py-20 bg-slate-100/60 dark:bg-slate-900/40 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-cyan">Fitur Unggulan</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Didesain untuk Efisiensi & Hasil Maksimal</p>
+                <p class="text-slate-600 dark:text-slate-400">Nikmati berbagai kemudahan dan fitur canggih yang dirancang khusus untuk mempermudah operasional digital Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300 group shadow-sm hover:shadow-xl hover:shadow-brand-500/10">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-brand-600 to-brand-cyan flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-gauge-high text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Kecepatan Tinggi</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Infrastruktur berbasis cloud performa tinggi memastikan akses kilat tanpa hambatan untuk pengguna Anda.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300 group shadow-sm hover:shadow-xl hover:shadow-brand-500/10">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-lock text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Keamanan Terjamin</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Perlindungan enkripsi end-to-end bertaraf internasional untuk melindungi data sensitif perusahaan Anda.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300 group shadow-sm hover:shadow-xl hover:shadow-brand-500/10">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-cyan-500 to-blue-500 flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-mobile-screen-button text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Desain Responsif</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Tampilan fleksibel dan adaptif yang terlihat sempurna di semua perangkat dari desktop hingga smartphone.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-all duration-300 group shadow-sm hover:shadow-xl hover:shadow-brand-500/10">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-500 flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-headset text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Dukungan 24/7</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Tim teknis berpengalaman kami siap membantu kendala Anda kapan saja, 24 jam sehari 7 hari seminggu.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="py-16 bg-gradient-to-r from-brand-600 to-brand-700 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                
+                <div class="space-y-2">
+                    <p class="text-4xl sm:text-5xl font-extrabold tracking-tight counter" data-target="10000">0</p>
+                    <p class="text-brand-100 font-medium text-sm sm:text-base">Pengguna Aktif</p>
+                </div>
+
+                <div class="space-y-2">
+                    <p class="text-4xl sm:text-5xl font-extrabold tracking-tight"><span class="counter" data-target="99.9" data-decimal="true">0</span>%</p>
+                    <p class="text-brand-100 font-medium text-sm sm:text-base">SLA Uptime</p>
+                </div>
+
+                <div class="space-y-2">
+                    <p class="text-4xl sm:text-5xl font-extrabold tracking-tight counter" data-target="500">0</p>
+                    <p class="text-brand-100 font-medium text-sm sm:text-base">Proyek Selesai</p>
+                </div>
+
+                <div class="space-y-2">
+                    <p class="text-4xl sm:text-5xl font-extrabold tracking-tight"><span class="counter" data-target="4.9" data-decimal="true">0</span>/5.0</p>
+                    <p class="text-brand-100 font-medium text-sm sm:text-base">Kepuasan Klien</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="testimoni" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-600 dark:text-brand-cyan">Testimoni Klien</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Apa Kata Mereka Tentang Kami?</p>
+                <p class="text-slate-600 dark:text-slate-400">Kepercayaan dan kepuasan pengguna adalah kebanggaan utama dari layanan kami.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-400 space-x-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 italic text-sm leading-relaxed">
+                            "NexaTech mengubah total alur kerja digital perusahaan kami. Kecepatannya luar biasa dan tim dukungannya sangat responsif!"
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-6 mt-6 border-t border-slate-200/60 dark:border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="Avatar" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Sarah Wijaya</h4>
+                            <p class="text-xs text-slate-500">CEO di TechCorp ID</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-400 space-x-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 italic text-sm leading-relaxed">
+                            "Sistem keamanannya memberikan kami ketenangan pikiran. Sangat mudah diintegrasikan dengan platform kami yang sudah ada."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-6 mt-6 border-t border-slate-200/60 dark:border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80" alt="Avatar" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Budi Santoso</h4>
+                            <p class="text-xs text-slate-500">CTO di Digitalize</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
+                    <div class="space-y-4">
+                        <div class="flex text-amber-400 space-x-1">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-300 italic text-sm leading-relaxed">
+                            "Desain responsif dan antarmuka yang sangat intuitif. Pengguna kami memberikan tanggapan yang sangat positif sejak awal peluncuran."
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 pt-6 mt-6 border-t border-slate-200/60 dark:border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80" alt="Avatar" class="w-12 h-12 rounded-full object-cover">
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Linda Pratama</h4>
+                            <p class="text-xs text-slate-500">Product Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-brand-600 via-brand-cyan to-brand-accent p-8 sm:p-12 lg:p-16 text-center text-white shadow-2xl">
+                <!-- Background Decorative Pattern -->
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_50%)]"></div>
+                
+                <div class="relative z-10 max-w-3xl mx-auto space-y-6">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+                        Siap Memulai Transformasi Digital Anda?
+                    </h2>
+                    <p class="text-slate-100 text-base sm:text-lg max-w-2xl mx-auto">
+                        Bergabunglah dengan ribuan perusahaan lainnya dan rasakan kemudahan mengelola platform modern bersama NexaTech hari ini.
+                    </p>
+                    <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#" class="px-8 py-4 rounded-xl bg-white text-brand-700 font-bold hover:bg-slate-100 shadow-lg hover:-translate-y-0.5 transition-all">
+                            Uji Coba Gratis 14 Hari
+                        </a>
+                        <a href="#kontak" class="px-8 py-4 rounded-xl bg-slate-900/40 text-white font-semibold border border-white/30 hover:bg-slate-900/60 transition-all">
+                            Hubungi Tim Sales
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontak" class="bg-slate-900 text-slate-400 pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+                
+                <!-- Company Info -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="#" class="flex items-center space-x-3">
+                        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-cyan p-0.5 flex items-center justify-center">
+                            <div class="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center">
+                                <i class="fa-solid fa-cubes text-brand-cyan"></i>
+                            </div>
+                        </div>
+                        <span class="text-xl font-bold text-white">Nexa<span class="text-brand-cyan">Tech</span></span>
+                    </a>
+                    <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+                        Penyedia solusi ekosistem digital terpercaya untuk mendukung percepatan dan keamanan pertumbuhan bisnis modern.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-brand-600 transition-colors">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-brand-600 transition-colors">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-brand-600 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-brand-600 transition-colors">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nav Links 1 -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Navigasi</h3>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#home" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#fitur" class="hover:text-white transition-colors">Fitur Utama</a></li>
+                        <li><a href="#tentang" class="hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="#testimoni" class="hover:text-white transition-colors">Testimoni Klien</a></li>
+                    </ul>
+                </div>
+
+                <!-- Nav Links 2 -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Layanan</h3>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Cloud Hosting</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Keamanan Siber</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Pengembangan Sistem</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Konsultasi IT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Subscription -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Berlangganan Newsletter</h3>
+                    <p class="text-xs text-slate-400 mb-3">Dapatkan kabar dan tips pembaruan teknologi terkini langsung ke email Anda.</p>
+                    <form onsubmit="event.preventDefault();" class="space-y-2">
+                        <input type="email" placeholder="Email Anda..." class="w-full px-3.5 py-2.5 bg-slate-800 rounded-xl text-sm text-white border border-slate-700 focus:outline-none focus:border-brand-cyan">
+                        <button type="submit" class="w-full py-2.5 bg-brand-600 hover:bg-brand-500 text-white font-medium text-sm rounded-xl transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+                <p>&copy; 2026 NexaTech Inc. Hak Cipta Dilindungi Undang-Undang.</p>
+                <div class="flex space-x-6 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-slate-400">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-slate-400">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Dark/Light Mode Theme Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+        const themeToggleDarkIconM = document.getElementById('theme-toggle-dark-icon-m');
+        const themeToggleLightIconM = document.getElementById('theme-toggle-light-icon-m');
+
+        // Check theme on page load
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeToggleLightIcon.classList.remove('hidden');
+            themeToggleLightIconM.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeToggleDarkIcon.classList.remove('hidden');
+            themeToggleDarkIconM.classList.remove('hidden');
+        }
+
+        function toggleTheme() {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+            themeToggleDarkIconM.classList.toggle('hidden');
+            themeToggleLightIconM.classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        themeToggleBtnMobile.addEventListener('click', toggleTheme);
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Counter Animation Logic
+        const counters = document.querySelectorAll('.counter');
+        let counterStarted = false;
+
+        function startCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const isDecimal = counter.getAttribute('data-decimal') === 'true';
+                const duration = 2000; // ms
+                const increment = target / (duration / 16);
+
+                let current = 0;
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.innerText = isDecimal ? current.toFixed(1) : Math.ceil(current).toLocaleString();
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.innerText = isDecimal ? target.toFixed(1) : target.toLocaleString() + (target >= 1000 ? '+' : '');
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        // Intersection Observer for Statistics Section
+        const statsSection = document.getElementById('tentang');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !counterStarted) {
+                    startCounters();
+                    counterStarted = true;
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
+</body>
+</html>

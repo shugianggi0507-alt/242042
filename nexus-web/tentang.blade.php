@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - NEXUS Digital Solutions</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        'primary-dark': '#4f46e5',
+                        secondary: '#0b0f19',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed w-full top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform">
+                        N
+                    </div>
+                    <span class="text-2xl font-black tracking-wider gradient-text">NEXUS</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                    <a href="index.html" class="text-slate-300 hover:text-indigo-400 transition-colors">Home</a>
+                    <a href="tentang.html" class="text-indigo-400 font-semibold border-b-2 border-indigo-500 pb-1">Tentang Kami</a>
+                    <a href="index.html#layanan" class="text-slate-300 hover:text-indigo-400 transition-colors">Layanan</a>
+                    <a href="index.html#portofolio" class="text-slate-300 hover:text-indigo-400 transition-colors">Portofolio</a>
+                    <a href="kontak.html" class="text-slate-300 hover:text-indigo-400 transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Action Button & Mobile Toggle -->
+                <div class="flex items-center gap-4">
+                    <a href="kontak.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full gradient-bg text-white font-semibold text-sm shadow-md hover:shadow-indigo-500/25 hover:opacity-95 transition-all">
+                        Mulai Proyek
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg bg-slate-900 border border-slate-800">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="index.html" class="block py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-indigo-400">Home</a>
+            <a href="tentang.html" class="block py-2 px-3 rounded-lg bg-indigo-500/10 text-indigo-400 font-semibold">Tentang Kami</a>
+            <a href="index.html#layanan" class="block py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-indigo-400">Layanan</a>
+            <a href="index.html#portofolio" class="block py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-indigo-400">Portofolio</a>
+            <a href="kontak.html" class="block py-2 px-3 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-indigo-400">Kontak</a>
+            <a href="kontak.html" class="block w-full text-center py-2.5 rounded-xl gradient-bg text-white font-semibold mt-4">Mulai Proyek</a>
+        </div>
+    </header>
+
+    <main class="pt-20 flex-grow">
+        <!-- HERO SECTION -->
+        <section class="relative py-20 lg:py-28 overflow-hidden bg-slate-950">
+            <div class="absolute inset-0 opacity-20 pointer-events-none">
+                <div class="absolute -top-24 -left-24 w-96 h-96 bg-indigo-600 rounded-full blur-3xl"></div>
+                <div class="absolute top-1/2 -right-24 w-96 h-96 bg-purple-600 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6">
+                    <i class="fa-solid fa-sparkles"></i> Mengenal Lebih Dekat
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6">
+                    Inovator di Balik Solutions <br class="hidden sm:inline" />
+                    <span class="gradient-text">Masa Depan Digital Anda</span>
+                </h1>
+                <p class="max-w-3xl mx-auto text-slate-400 text-base sm:text-lg lg:text-xl leading-relaxed mb-10">
+                    NEXUS adalah agensi transformasi digital terdepan yang berdedikasi membangun pengalaman teknologi luar biasa, menghubungkan ide kreatif dengan eksekusi teknis presisi tinggi.
+                </p>
+                <div class="flex flex-wrap justify-center gap-8 border-t border-slate-800/80 pt-10 mt-10">
+                    <div class="text-center px-4">
+                        <div class="text-3xl sm:text-4xl font-extrabold gradient-text mb-1">8+</div>
+                        <div class="text-xs sm:text-sm text-slate-400 font-medium">Tahun Pengalaman</div>
+                    </div>
+                    <div class="text-center px-4">
+                        <div class="text-3xl sm:text-4xl font-extrabold gradient-text mb-1">150+</div>
+                        <div class="text-xs sm:text-sm text-slate-400 font-medium">Proyek Selesai</div>
+                    </div>
+                    <div class="text-center px-4">
+                        <div class="text-3xl sm:text-4xl font-extrabold gradient-text mb-1">50+</div>
+                        <div class="text-xs sm:text-sm text-slate-400 font-medium">Talenta Profesional</div>
+                    </div>
+                    <div class="text-center px-4">
+                        <div class="text-3xl sm:text-4xl font-extrabold gradient-text mb-1">99%</div>
+                        <div class="text-xs sm:text-sm text-slate-400 font-medium">Kepuasan Klien</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISI & MISI SECTION -->
+        <section class="py-16 bg-slate-900/50 relative border-y border-slate-800/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Visi Card -->
+                    <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-indigo-500/50 transition-all group relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-2 h-full gradient-bg"></div>
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Visi Kami</h2>
+                        <p class="text-slate-400 leading-relaxed">
+                            Menjadi katalis utama transformasi digital global yang memberdayakan bisnis dari segala skala untuk berkembang, berinovasi, dan mendominasi pasar digital dengan solusi teknologi mutakhir.
+                        </p>
+                    </div>
+
+                    <!-- Misi Card -->
+                    <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-purple-500/50 transition-all group relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-purple-500 to-pink-500"></div>
+                        <div class="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white mb-4">Misi Kami</h2>
+                        <ul class="space-y-3 text-slate-400">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-indigo-400 mt-1"></i>
+                                <span>Menghasilkan produk digital berkualitas tinggi yang aman, scalable, dan user-centric.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-indigo-400 mt-1"></i>
+                                <span>Mendampingi mitra bisnis dalam mengadopsi teknologi efisien dan berdaya saing tinggi.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-indigo-400 mt-1"></i>
+                                <span>Membangun ekosistem kerja kolaboratif yang terus berinovasi tanpa henti.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIMELINE / STORY SECTION -->
+        <section class="py-20 bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Perjalanan Kami</h2>
+                    <p class="text-slate-400">Bagaimana NEXUS tumbuh dari studio kecil hingga menjadi mitra terpercaya perusahaan multinasional.</p>
+                </div>
+
+                <div class="relative border-l border-slate-800 max-w-3xl mx-auto pl-6 sm:pl-10 space-y-12">
+                    <!-- Event 1 -->
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-indigo-500 flex items-center justify-center group-hover:bg-indigo-500 transition-colors">
+                            <div class="w-2 h-2 rounded-full bg-indigo-400 group-hover:bg-white"></div>
+                        </div>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">2018</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-1">Awal Berdiri</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Didirikan oleh 4 pengembang berbakat dengan fokus awal pada pembuatan aplikasi web kustom untuk UMKM lokal.</p>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-purple-500 flex items-center justify-center group-hover:bg-purple-500 transition-colors">
+                            <div class="w-2 h-2 rounded-full bg-purple-400 group-hover:bg-white"></div>
+                        </div>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20">2021</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-1">Ekspansi Layanan & Tim</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Membuka divisi UI/UX & Cloud Infrastructure. Jumlah tim meningkat pesat menjadi 25+ profesional digital.</p>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-pink-500 flex items-center justify-center group-hover:bg-pink-500 transition-colors">
+                            <div class="w-2 h-2 rounded-full bg-pink-400 group-hover:bg-white"></div>
+                        </div>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-pink-500/10 text-pink-400 border border-pink-500/20">2024</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-1">Go International</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Menangani lebih dari 100+ klien di Asia Tenggara & Australia, serta memenangkan penghargaan Best Agency Innovation.</p>
+                    </div>
+
+                    <!-- Event 4 -->
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-emerald-500 flex items-center justify-center group-hover:bg-emerald-500 transition-colors">
+                            <div class="w-2 h-2 rounded-full bg-emerald-400 group-hover:bg-white"></div>
+                        </div>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">2026</span>
+                        <h3 class="text-xl font-bold text-white mt-2 mb-1">Era AI & Transformasi Baru</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Mewujudkan solusi berbasis Kecerdasan Buatan (AI) & Enterprise Automation untuk efisiensi bisnis skala besar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CORE VALUES SECTION -->
+        <section class="py-20 bg-slate-900/40 border-t border-slate-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Nilai-Nilai Utama</h2>
+                    <p class="text-slate-400">Prinsip dasar yang memandu setiap keputusan dan karya yang kami hasilkan.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Value 1 -->
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all text-center group">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Inovasi</h3>
+                        <p class="text-slate-400 text-sm">Selalu mengeksplorasi teknologi baru untuk memberikan nilai tambah terbaik.</p>
+                    </div>
+
+                    <!-- Value 2 -->
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all text-center group">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Integritas</h3>
+                        <p class="text-slate-400 text-sm">Transparansi, kejujuran, dan komitmen tinggi dalam setiap hubungan kerja.</p>
+                    </div>
+
+                    <!-- Value 3 -->
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all text-center group">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Kualitas</h3>
+                        <p class="text-slate-400 text-sm">Menjaga standar kualitas tertinggi pada setiap baris kode dan desain visual.</p>
+                    </div>
+
+                    <!-- Value 4 -->
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all text-center group">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Kolaborasi</h3>
+                        <p class="text-slate-400 text-sm">Bekerja rapat bersama klien sebagai satu tim untuk mencapai tujuan sukses.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM SECTION -->
+        <section class="py-20 bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Tim Pemimpin Kami</h2>
+                    <p class="text-slate-400">Digerakkan oleh individu yang berpengalaman dan berdedikasi tinggi.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Member 1 -->
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
+                        <div class="relative overflow-hidden aspect-square">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" 
+                                 onerror="this.src='https://placehold.co/400x400/1e293b/ffffff?text=Alex+Rivera'" 
+                                 alt="Alex Rivera" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white">Alex Rivera</h3>
+                            <p class="text-indigo-400 text-xs font-medium mb-3">CEO & Co-Founder</p>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Mantan Tech Lead di Silicon Valley dengan passion pada sistem berskala besar.</p>
+                            <div class="flex gap-3 text-slate-400 text-sm">
+                                <a href="#" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
+                        <div class="relative overflow-hidden aspect-square">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" 
+                                 onerror="this.src='https://placehold.co/400x400/1e293b/ffffff?text=David+Chen'" 
+                                 alt="David Chen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white">David Chen</h3>
+                            <p class="text-indigo-400 text-xs font-medium mb-3">Chief Technology Officer</p>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Ahli arsitektur cloud & keamanan siber dengan 10+ tahun pengalaman.</p>
+                            <div class="flex gap-3 text-slate-400 text-sm">
+                                <a href="#" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
+                        <div class="relative overflow-hidden aspect-square">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
+                                 onerror="this.src='https://placehold.co/400x400/1e293b/ffffff?text=Sarah+Jenkins'" 
+                                 alt="Sarah Jenkins" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white">Sarah Jenkins</h3>
+                            <p class="text-indigo-400 text-xs font-medium mb-3">Head of Design</p>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Pelopor UI/UX modern yang berfokus pada pengalaman pengguna yang intuitif.</p>
+                            <div class="flex gap-3 text-slate-400 text-sm">
+                                <a href="#" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-dribbble"></i></a>
+                                <a href="#" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 4 -->
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
+                        <div class="relative overflow-hidden aspect-square">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop" 
+                                 onerror="this.src='https://placehold.co/400x400/1e293b/ffffff?text=Michael+Suharto'" 
+                                 alt="Michael Suharto" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-white">Michael Suharto</h3>
+                            <p class="text-indigo-400 text-xs font-medium mb-3">Lead Project Manager</p>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Memastikan setiap proyek berjalan tepat waktu, efisien, dan sesuai target.</p>
+                            <div class="flex gap-3 text-slate-400 text-sm">
+                                <a href="#" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#" class="hover:text-indigo-400 transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION SECTION -->
+        <section class="py-16 bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="rounded-3xl gradient-bg p-8 sm:p-12 text-center relative overflow-hidden shadow-2xl shadow-indigo-500/20">
+                    <div class="relative z-10 max-w-2xl mx-auto">
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Siap Mewujudkan Ide Digital Anda?</h2>
+                        <p class="text-indigo-100 mb-8 text-base sm:text-lg">Konsultasikan kebutuhan teknologi Anda dengan tim pakar kami secara gratis sekarang.</p>
+                        <a href="kontak.html" class="inline-flex items-center gap-2 bg-white text-slate-950 font-bold px-8 py-3.5 rounded-full hover:bg-slate-100 transition-all shadow-lg hover:scale-105">
+                            <span>Hubungi Kami Sekarang</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center text-white font-extrabold text-base">N</div>
+                        <span class="text-xl font-black text-white">NEXUS</span>
+                    </a>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Solusi digital inovatif untuk mentransformasi ide Anda menjadi kenyataan bernilai tinggi.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Navigasi</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="index.html" class="hover:text-indigo-400 transition-colors">Home</a></li>
+                        <li><a href="tentang.html" class="hover:text-indigo-400 transition-colors">Tentang Kami</a></li>
+                        <li><a href="index.html#layanan" class="hover:text-indigo-400 transition-colors">Layanan</a></li>
+                        <li><a href="kontak.html" class="hover:text-indigo-400 transition-colors">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Layanan</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-indigo-400 transition-colors">Web Development</a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition-colors">Mobile Apps</a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition-colors">UI/UX Design</a></li>
+                        <li><a href="#" class="hover:text-indigo-400 transition-colors">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Media Sosial</h4>
+                    <div class="flex gap-4 text-base">
+                        <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-indigo-600 transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-indigo-600 transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white hover:bg-indigo-600 transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
+                &copy; 2026 NEXUS Digital Solutions. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Drawer Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if(mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+    </script>
+</body>
+</html>
